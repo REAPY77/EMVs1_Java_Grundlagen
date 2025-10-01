@@ -1,3 +1,5 @@
+import javax.swing.*;
+import java.security.DrbgParameters;
 import java.util.Scanner;
 public class Main {
 
@@ -14,10 +16,10 @@ public class Main {
         byte smallNumber = 1;
 
         // Your solution here:
-        if (bigNumber > smallNumber){
-            System.out.println(bigNumber +" is greater than "+ smallNumber);
+        if (bigNumber > smallNumber) {
+            System.out.println(bigNumber + " is greater than " + smallNumber);
         } else {
-            System.out.println(bigNumber + "isn't greater than"+ smallNumber );
+            System.out.println(bigNumber + "isn't greater than" + smallNumber);
         }
 
         // There are multiple ways to solve this problem.
@@ -28,10 +30,10 @@ public class Main {
 
         // Your solution here:
         boolean result = bigNumber > smallNumber;
-        if (result){
-            System.out.println(bigNumber +" is greater than "+ smallNumber);
+        if (result) {
+            System.out.println(bigNumber + " is greater than " + smallNumber);
         } else {
-            System.out.println(bigNumber + "isn't greater than"+ smallNumber );
+            System.out.println(bigNumber + "isn't greater than" + smallNumber);
         }
 
         //--------------------------------------------------------------------------------------------------------------
@@ -44,9 +46,9 @@ public class Main {
         // Get the user input with the scanner and safe it in the variable drivingSpeed
         int drivingSpeed = userInput.nextInt();
 
-        if (drivingSpeed > speedLimit ){
+        if (drivingSpeed > speedLimit) {
             System.out.println("you Drove to fast! ");
-        }else {
+        } else {
             System.out.println("you're good");
         }
         // Check if the drivingSpeed is greater than the value of the variable "speedlimit".
@@ -58,7 +60,7 @@ public class Main {
         //      If the user input is smaller than 2000, then the program prints
         //      the string "Ancient history!"
         int historyAge = userInput.nextInt();
-        if (historyAge < 2000){
+        if (historyAge < 2000) {
             System.out.println("ancient history");
         } else {
             System.out.println("non-ancient History!");
@@ -78,9 +80,9 @@ public class Main {
         //      If not, then tell the user that it is not legally allowed
         //      to consume alcohol everywhere in the world.
         byte age = userInput.nextByte();
-        if (age > 21){
+        if (age > 21) {
             System.out.println("you're allowed to drink alcohol");
-        }else{
+        } else {
             System.out.println("you're not allowed to drink alcohol");
         }
         //--------------------------------------------------------------------------------------------------------------
@@ -96,7 +98,14 @@ public class Main {
 
         //      However, if the user is older than 21, then tell him that he is allowed to consume alcohol
         //      everywhere.
-
+        byte age2 = userInput.nextByte();
+        if (age >= 21) {
+            System.out.println("you are allowed to drink everywhere in the world");
+        } else if (age >= 18) {
+            System.out.println("you are allowed to drink in the most parts of the world except the US");
+        } else {
+            System.out.println("you are not allowed to drink!");
+        }
 
         //--------------------------------------------------------------------------------------------------------------
         System.out.println("Exercise 7");
@@ -104,7 +113,23 @@ public class Main {
         //      If the user is younger than 20, then print out "You are still young".
         //      And if the user also has an IQ higher than 120, then print out this:
         //      " ...and also very smart!"
+        System.out.println("Enter your IQ");
+        short IQinShort = userInput.nextShort();
+        System.out.println("Enter your Age");
+        byte age3 = userInput.nextByte();
+        if (age3 < 20 && IQinShort > 120) {
+            System.out.println("you are still young and very smart");
+        } else if (age3 < 20) {
+            System.out.println("you are still young");
+        } else {
+            System.out.println("ok");
+        }
 
+
+        /*if (age3 < 20){
+            System.out.println("you are still young");
+            if ....
+        }  */
         //--------------------------------------------------------------------------------------------------------------
         System.out.println("Exercise 8");
         // 08.  Write a program that prompts the user for two integers and prints the larger of the two.
@@ -112,7 +137,7 @@ public class Main {
         //
         //      Sample output 1:
         //      Give the first number:
-        //      7
+        //
         //      Give the second number:
         //      2
         //      Greater number is: 7
@@ -132,7 +157,18 @@ public class Main {
         //      Give the second number:
         //      3
         //      The numbers are equal!
-
+        System.out.println("enter 2 numbers for a comparison ");
+        System.out.println("enter first Number:");
+        int number1 = userInput.nextInt();
+        System.out.println("second number:");
+        int number2 = userInput.nextInt();
+        if(number1 > number2){
+            System.out.println("Greater number: "+ number1);
+        }else if (number2 > number1){
+            System.out.println("Greater number: "+ number2);
+        } else if (number1 == number2){
+            System.out.println("the numbers are equal");
+        }
 
         //--------------------------------------------------------------------------------------------------------------
         System.out.println("Exercise 9");
@@ -145,6 +181,22 @@ public class Main {
         //      81-90     very good
         //      91-100    awesome!
         //      > 100     impossible
+        System.out.println("enter Byte");
+        byte grade = userInput.nextByte();
+        if (grade > 100){
+            System.out.println("impossible");
+        }else if (grade >= 81){
+            System.out.println("awesome");
+        }else if (grade >= 61){
+            System.out.println("good");
+        } else if (grade >= 51){
+            System.out.println("failed");
+        }else if (grade >= 31){
+            System.out.println();
+        }else if (grade <  0){
+            System.out.println("impossible");
+        }
+
 
         //--------------------------------------------------------------------------------------------------------------
         System.out.println("Exercise 10");
@@ -156,11 +208,17 @@ public class Main {
 
         boolean isDoorOpen = true;
         // If-else-statement here
+        if (isDoorOpen){
+            System.out.println("Entering Room");
+        } else {
+            System.out.println("opening door");
+            isDoorOpen = true;
+        }
 
 
         // Short form here
-
-
+        String result2 =(isDoorOpen) ? "Entering Room" : "opening door";
+        System.out.println(result2);
         //--------------------------------------------------------------------------------------------------------------
         System.out.println("Exercise 11");
         // 11.  There will be a huge festival coming up, and unfortunately, the prices are quite high.
@@ -170,6 +228,23 @@ public class Main {
         //      otherwise, inform them that they are unfortunately not eligible for the discount.
 
         //      Create two solutions for this task: one that uses the "==" operator and another that uses the "!=" operator.
+
+        System.out.println("enter age: ");
+        byte age4 = userInput.nextByte();
+        if (age4 == 18 ){
+            System.out.println("as you are 18 years old you get the discount for the festival");
+
+        } else {
+            System.out.println(" you dont get the discount");
+        }
+        System.out.println("second method of the exercise");
+        if (age4 != 18){
+            System.out.println("you are not getting a discount ");
+        }else {
+            System.out.println("you are getting a discount");
+        }
     }
+
+
 }
 
