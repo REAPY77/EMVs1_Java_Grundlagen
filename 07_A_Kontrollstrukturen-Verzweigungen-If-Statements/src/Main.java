@@ -190,9 +190,9 @@ public class Main {
         }else if (grade >= 61){
             System.out.println("good");
         } else if (grade >= 51){
-            System.out.println("failed");
+            System.out.println("ok");
         }else if (grade >= 31){
-            System.out.println();
+            System.out.println("poor");
         }else if (grade <  0){
             System.out.println("impossible");
         }
