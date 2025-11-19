@@ -64,9 +64,17 @@ public class Main {
         // 04.  Calculate the sum of all even numbers from 0-100 (both inclusive). Print it to the console.
 
         int forSum_04 = 0;
+        int counter2 = 0;
+        int counter3 = 0;
+        for(int counter4 = 0; counter4 <= 100; counter4++) {
+            if (counter4 % 2 == 0) {
+                forSum_04 = forSum_04 + counter4;
 
-        // Your code here
+            }else {
 
+            }
+            // Your code here
+        }
         System.out.println(forSum_04); // Should be 2550
 
         //--------------------------------------------------------------------------------------------------------------
@@ -74,7 +82,12 @@ public class Main {
         // 05.  Calculate the sum of all odd numbers from 0-100 (both inclusive). Print it to the console.
 
         int forSum_05 = 0;
-
+        int rt1= 0;
+        for(rt1 = 0; rt1 <= 100; rt1++){
+            if(rt1 %2 ==1){
+                forSum_05 = forSum_05 + rt1;
+            }
+        }
         // Your code here
 
         System.out.println(forSum_05); // Should be 2500
