@@ -1,18 +1,18 @@
-import javax.smartcardio.TerminalFactory;
+package com.berufsfachschule.oop;
 
 public class Temperature {
-    public double tempInCelsius = 16;
-    public double tempInFahrenheit;
-    public double tempInKelvin;
+    private double tempInCelsius;
+
 
 
     public Temperature(double tempInCelsius){
         this.tempInCelsius = tempInCelsius;
         System.out.println("added new temperature");
     }
+
+    public Temperature()
     public void printCelsius(){
         System.out.println(tempInCelsius+ "° Celsius");
-
     }
     public void printHotOrColdCelsius(){
         if(tempInCelsius > 24){
@@ -21,14 +21,21 @@ public class Temperature {
             System.out.println("its freezing: "+ tempInCelsius + "° celsius");
         }
     }
-    public void calculateCelsiusToFahrenheit(){
-            tempInFahrenheit = (tempInCelsius* 1.8) + 32;
-            System.out.println("them in Fahrenheit is: " +tempInFahrenheit);
+    public double getCelsiusToFahrenheit(){
+            return((tempInCelsius* 1.8) + 32);
+
 
     }
-    public void calculateKelvin(){
-        tempInKelvin = tempInCelsius + 273.15;
-        System.out.println("Temp in Kelvin:" + tempInKelvin);
+    public double getCelsiusToKelvin(){
+        return(tempInCelsius + 273.15);
+
     }
+    public double getTempInCelsius(){
+        return(tempInCelsius);
+    }
+    public double setTempInCelsius(){
+
+    }
+
 
 }

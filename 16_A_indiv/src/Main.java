@@ -10,16 +10,45 @@ public class Main {
 
 
         AudioController disk1 = new AudioController("non-selected");
+        AudioController disk2 = new AudioController("non-selected")
 
         System.out.println("enter ´1´ or ´2´ for changing disk");
-        System.out.println("enter ´3´ for EQ Adjustments");
         System.out.println("enter ´4´ for Master Volume");
         System.out.println("");
-        byte options = userInput.nextByte();
-        if (options == 1){
-            System.out.println("enter track name");
-            String track = userInput.nextLine();
-            disk1.trackName = track;
+        System.out.println("'exit' to leave");
+        System.out.println("'return' to discard changes");
+
+        String options = userInput.nextLine();
+
+
+
+            switch (options){
+                case "1", "2" -> {
+                    System.out.println("1) new track");
+                    System.out.println("2) stop");
+                    String selectionOption = userInput.nextLine();
+                    if(selectionOption.equals("1")){
+                        System.out.println("enter name of the track");
+                        String trackname = userInput.nextLine();
+                        if (options.equals("1")){
+                            disk1.trackName = trackname;
+
+                        }else{
+                            disk2.trackName = trackname;
+                        }
+                    }else {
+                        if (options.equals("1")){
+                            disk1.trackName = "";
+
+                        }else {
+                            disk2.trackName = "";
+                        }
+                    }
+
+                }
+
+
+            }
 
 
         }
