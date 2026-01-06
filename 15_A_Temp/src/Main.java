@@ -10,7 +10,11 @@ public class Main {
         //System.out.println(temp1.tempInCelsius); Main.java lost access rights to the variable.
         System.out.println(temp1.getCelsiusToFahrenheit());
 
-        Temperature temp2 = new Temperature(4125.223);
+        Temperature temp2 = new Temperature();
+        temp2.setTempInCelsius(14.4222);
+        System.out.println(temp2.getTempInCelsius());
+        temp2.printCelsius();
+
     }
 
 
