@@ -10,7 +10,9 @@ public class Temperature {
         System.out.println("added new temperature");
     }
 
-    public Temperature()
+    public Temperature(){
+
+    }
     public void printCelsius(){
         System.out.println(tempInCelsius+ "° Celsius");
     }
@@ -33,8 +35,8 @@ public class Temperature {
     public double getTempInCelsius(){
         return(tempInCelsius);
     }
-    public double setTempInCelsius(){
-
+    public double setTempInCelsius(double tempInCelsius){
+        return(this.tempInCelsius = tempInCelsius);
     }
 
 
